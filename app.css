@@ -1,0 +1,62 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+body .box{
+	position: relative;
+	animation: rocket 0.1s ease infinite;
+}
+@keyframes rocket{
+	0%,100%{
+		transform: translateY(-2px);
+	}
+	50%{
+		transform: translateY(2px);
+	}
+}
+body .box::before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(100px);
+	width: 10px;
+	height: 150px;
+	background: linear-gradient(#00d0ff,transparent);
+}
+body .box::after{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(100px);
+	width: 10px;
+	height: 150px;
+	background: linear-gradient(#00d0ff94,transparent);
+	filter: blur(10px);
+}
+
+body s{
+	position: absolute;
+	background: rgba(255,255,255,0.5);
+	top: 0px;
+	animation: ani linear infinite;
+}
+@keyframes ani{
+	0%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(100vh);
+	}
+}

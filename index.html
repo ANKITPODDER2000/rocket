@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ROCKET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./app.css">
+</head>
+<body>
+	<div class="box">
+		<img src="./rocket.png">
+	</div>
+	<script type="text/javascript">
+		const body = document.querySelector('body');
+		const stars = ()=>{
+			let count = 50;
+			for(let i = 0;i<count;i++){
+				let star = document.createElement('s');
+				let h = Math.random() * 100;
+				let dur = Math.random() * 1;
+				let left = Math.floor(Math.random() * 100);
+
+				star.style.height = h + "px";
+				star.style.width = 1 + "px";
+				star.style.left = left + "%";
+				star.style.animationDuration = dur + "s";
+
+				body.appendChild(star);
+			}
+		}
+		stars();
+	</script>
+</body>
+</html>
